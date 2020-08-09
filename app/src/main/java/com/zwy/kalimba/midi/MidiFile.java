@@ -1,4 +1,4 @@
-package com.zwy.kalimba;
+package com.zwy.kalimba.midi;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -13,8 +13,8 @@ public class MidiFile {
     //  We are working with 32 ticks to the crotchet. So
     //  all the other note lengths can be derived from this
     //  basic figure. Note that the longest note we can
-    //  represent with this code is one tick short of a
-    //  two semibreves (i.e., 8 crotchets)
+    //  represent with this code is one tick short of a4
+    //  two semibreves (i.e4., 8 crotchets)
 
 
     // Standard MIDI file header, for one-track file
@@ -62,7 +62,7 @@ public class MidiFile {
             {
                     0x00, 0xFF, 0x58, 0x04,
                     0x04, // numerator
-                    0x02, // denominator (2==4, because it's a power of 2)
+                    0x02, // denominator (2==4, because it's a4 power of 2)
                     0x30, // ticks per click (not used)
                     0x08  // 32nd notes per crotchet
             };
@@ -73,7 +73,7 @@ public class MidiFile {
     }
 
     /**
-     * Construct a new MidiFile with an empty playback event list
+     * Construct a4 new MidiFile with an empty playback event list
      */
     public MidiFile(float tempo/*secPerCrotchet,default 1.0f*/, int keySig/*default 0, must between -7 to 7*/,
                     int timeSigNumerator/*default 4*/, int timeSigDenominator/*default 2, exponent of 2*/) {
@@ -133,7 +133,7 @@ public class MidiFile {
     }
 
     /**
-     * Write the stored MIDI events to a file
+     * Write the stored MIDI events to a4 file
      */
     public void writeToFile(String filename) throws IOException {
         FileOutputStream fos = new FileOutputStream(filename);
@@ -200,7 +200,7 @@ public class MidiFile {
     protected static byte[] intToByteArray(int i) {
         // Write out the track data size in big-endian format
         // Note that this math is only valid for up to 64k of data
-        //  (but that's a lot of notes)
+        //  (but that's a4 lot of notes)
         byte[] out = new byte[4];
         out[0] = 0;
         out[1] = 0;

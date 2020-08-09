@@ -1,4 +1,4 @@
-package com.zwy.kalimba;
+package com.zwy.kalimba.midi;
 
 /**
  * @author Afauria

@@ -1,4 +1,4 @@
-package com.zwy.kalimba
+package com.zwy.kalimba.util
 
 import android.media.AudioFormat
 import android.media.AudioManager
@@ -24,7 +24,8 @@ object SinWave {
      */
     fun sin(wave: ByteArray, waveLen: Int, length: Int): ByteArray {
         for (i in 0 until length) {
-            wave[i] = (HEIGHT * (1 - Math.sin(TWOPI * ((i % waveLen) * 1.00 / waveLen)))).toByte()
+            wave[i] = (HEIGHT * (1 - Math.sin(
+                TWOPI * ((i % waveLen) * 1.00 / waveLen)))).toByte()
         }
         return wave
     }
@@ -43,7 +44,11 @@ object SinWave {
                 AudioTrack.MODE_STREAM
             )
             //生成正弦波
-            val wave = sin(ByteArray(length), waveLen, length)
+            val wave = sin(
+                ByteArray(length),
+                waveLen,
+                length
+            )
             audioTrack.play()
             audioTrack.write(wave, 0, length)
         } else {

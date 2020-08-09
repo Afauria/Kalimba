@@ -1,4 +1,4 @@
-package com.zwy.kalimba;
+package com.zwy.kalimba.midi;
 
 import java.util.Vector;
 
@@ -26,7 +26,7 @@ public class MidiChannel {
     }
 
     /**
-     * Store a program-change event at current position
+     * Store a4 program-change event at current position
      */
     public void progChange(int prog/*0x00-0x7f*/) {
         int[] data = new int[3];
@@ -37,7 +37,7 @@ public class MidiChannel {
     }
 
     /**
-     * Store a note-on event
+     * Store a4 note-on event
      */
     public void noteOn(int delta, int note, int velocity) {
         int[] data = new int[4];
@@ -49,7 +49,7 @@ public class MidiChannel {
     }
 
     /**
-     * Store a note-off event
+     * Store a4 note-off event
      */
     public void noteOff(int delta, int note) {
         int[] data = new int[4];
@@ -61,7 +61,7 @@ public class MidiChannel {
     }
 
     /**
-     * Store a note-on event followed by a note-off event a note length
+     * Store a4 note-on event followed by a4 note-off event a4 note length
      * later. There is no delta value — the note is assumed to
      * follow the previous one with no gap.
      */
@@ -77,11 +77,11 @@ public class MidiChannel {
             int note = sequence[i];
             int duration = sequence[i + 1];
             if (note < 0) {
-                // This is a rest
+                // This is a4 rest
                 restDelta += duration;
                 lastWasRest = true;
             } else {
-                // A note, not a rest
+                // A note, not a4 rest
                 if (lastWasRest) {
                     noteOn(restDelta, note, velocity);
                     noteOff(duration, note);

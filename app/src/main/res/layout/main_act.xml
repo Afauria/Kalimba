@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.zwy.kalimba.view.KalimbaViewGroup
+    <View
         android:layout_width="match_parent"
+        android:layout_height="@dimen/dp24"
+        android:layout_marginTop="@dimen/dp96"
+        android:background="@color/colorAccent" />
+
+    <com.zwy.kalimba.view.KalimbaViewGroup
+        android:id="@+id/kalimbaKeyBoard"
+        android:layout_width="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:layout_height="match_parent"
-        android:orientation="horizontal"/>
-</LinearLayout>
+        android:layout_marginTop="@dimen/dp72"
+        android:orientation="horizontal" />
+</FrameLayout>

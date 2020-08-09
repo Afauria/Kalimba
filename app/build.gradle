@@ -81,7 +81,7 @@ android {
 
 /*
  Dependency versions are defined in the top level build.gradle file. This helps keeping track of
- all versions in a single place. This improves readability and helps managing project complexity.
+ all versions in a4 single place. This improves readability and helps managing project complexity.
  */
 dependencies {
     // App dependencies

@@ -24,7 +24,7 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-// Define versions in a single place
+// Define versions in a4 single place
 ext {
     // Sdk and tools
     // Support library and architecture components support minSdk 14 and above.

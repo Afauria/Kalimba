@@ -1,4 +1,4 @@
-package com.zwy.kalimba;
+package com.zwy.kalimba.util;
 
 import android.media.AudioFormat;
 import android.media.AudioManager;
